@@ -1,0 +1,17 @@
+plugins:
+  - "@dotcom-tool-kit/backend-heroku-app"
+  - "@dotcom-tool-kit/jest"
+  - "@dotcom-tool-kit/prettier"
+  - "@dotcom-tool-kit/lint-staged"
+hooks:
+  git:precommit:
+    - SecretSquirrel
+options:
+  "@dotcom-tool-kit/heroku":
+    pipeline: ef-component-registry
+    systemCode: ef-component-registry
+    scaling:
+      ef-component-registry:
+        web:
+          size: standard-1X
+          quantity: 1

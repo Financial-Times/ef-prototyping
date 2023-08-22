@@ -1,0 +1,26 @@
+{
+  "name": "extensible-frontends",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "dotcom-tool-kit": "^3.2.1",
+    "@dotcom-tool-kit/component": "^3.1.8",
+    "lerna": "^7.1.5"
+  },
+  "scripts": {
+    "build": "dotcom-tool-kit build:local",
+    "test": "dotcom-tool-kit test:local",
+    "start": "dotcom-tool-kit run:local"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "dotcom-tool-kit git:precommit",
+      "commit-msg": "dotcom-tool-kit git:commitmsg"
+    }
+  }
+}
